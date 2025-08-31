@@ -1,0 +1,159 @@
+import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
+import 'package:limak_courier/core/utils/storage/secure_storage.dart';
+import 'package:limak_courier/src/data/models/models.dart';
+
+class CourierService {
+  final Dio _dio;
+
+  CourierService({required Dio dio}) : _dio = dio;
+
+  // Get Region Details
+  Future<RegionDetailsResponse> getRegionDetails(int regionId) async {
+    try {
+      debugPrint('Fetching region details for region: $regionId');
+
+      final response = await _dio.get('/get/region-details', queryParameters: {
+        'region_id': regionId,
+      });
+
+      debugPrint('Region details response status: ${response.statusCode}');
+      debugPrint('Region details response data: ${response.data}');
+
+      if (response.statusCode == 200) {
+        return RegionDetailsResponse.fromJson(response.data);
+      } else {
+        throw 'Failed to fetch region details with status: ${response.statusCode}';
+      }
+    } on DioException catch (e) {
+      debugPrint('Region details DioException: ${e.response?.statusCode} - ${e.response?.data}');
+      
+      // Try to extract error message from response
+      if (e.response?.data != null) {
+        if (e.response!.data is Map<String, dynamic>) {
+          final errorData = e.response!.data as Map<String, dynamic>;
+          final message = errorData['message'] ?? errorData['error'] ?? 'Failed to fetch region details';
+          throw message;
+        }
+      }
+      
+      throw 'Failed to fetch region details. Please try again.';
+    }
+  }
+
+  // Get Account
+  Future<AccountResponse> getAccount(int regionId) async {
+    try {
+      debugPrint('Fetching account for region: $regionId');
+
+      final response = await _dio.get('/get/account', queryParameters: {
+        'region_id': regionId,
+      });
+
+      debugPrint('Account response status: ${response.statusCode}');
+      debugPrint('Account response data: ${response.data}');
+
+      if (response.statusCode == 200) {
+        return AccountResponse.fromJson(response.data);
+      } else {
+        throw 'Failed to fetch account with status: ${response.statusCode}';
+      }
+    } on DioException catch (e) {
+      debugPrint('Account DioException: ${e.response?.statusCode} - ${e.response?.data}');
+      
+      // Try to extract error message from response
+      if (e.response?.data != null) {
+        if (e.response!.data is Map<String, dynamic>) {
+          final errorData = e.response!.data as Map<String, dynamic>;
+          final message = errorData['message'] ?? errorData['error'] ?? 'Failed to fetch account';
+          throw message;
+        }
+      }
+      
+      throw 'Failed to fetch account. Please try again.';
+    }
+  }
+
+  // Get Regions
+  Future<RegionsResponse> getRegions() async {
+    try {
+      debugPrint('Fetching regions...');
+
+      final response = await _dio.get('/get/regions');
+
+      debugPrint('Regions response status: ${response.statusCode}');
+      debugPrint('Regions response data: ${response.data}');
+
+      if (response.statusCode == 200) {
+        return RegionsResponse.fromJson(response.data);
+      } else {
+        throw 'Failed to fetch regions with status: ${response.statusCode}';
+      }
+    } on DioException catch (e) {
+      debugPrint('Regions DioException: ${e.response?.statusCode} - ${e.response?.data}');
+      
+      // Try to extract error message from response
+      if (e.response?.data != null) {
+        if (e.response!.data is Map<String, dynamic>) {
+          final errorData = e.response!.data as Map<String, dynamic>;
+          final message = errorData['message'] ?? errorData['error'] ?? 'Failed to fetch regions';
+          throw message;
+        }
+      }
+      
+      throw 'Failed to fetch regions. Please try again.';
+    }
+  }
+
+  // Login
+  Future<LoginResponse> login(LoginRequest loginRequest) async {
+    try {
+      debugPrint('Login request: ${loginRequest.toJson()}');
+
+      final response = await _dio.post(
+        '/depot/login',
+        data: loginRequest.toJson(),
+      );
+
+      debugPrint('Login response status: ${response.statusCode}');
+      debugPrint('Login response data: ${response.data}');
+
+      // Check if login was successful
+      if (response.statusCode == 200) {
+        final loginResponse = LoginResponse.fromJson(response.data);
+        
+        if (loginResponse.success && loginResponse.token != null) {
+          Future.microtask(() {
+            AuthTokens authTokens = AuthTokens(
+              accessToken: loginResponse.token!,
+              refreshToken: loginResponse.token!,
+            );
+            SecureStorage.saveTokens(authTokens);
+          });
+          return loginResponse;
+                  } else {
+            throw loginResponse.message ?? 'Login failed';
+          }
+      } else {
+        throw 'Login failed with status: ${response.statusCode}';
+      }
+    } on DioException catch (e) {
+      debugPrint('Login DioException: ${e.response?.statusCode} - ${e.response?.data}');
+      
+      if (e.response?.statusCode == 401) {
+        throw 'Invalid username or password';
+      }
+      
+      // Try to extract error message from response
+      if (e.response?.data != null) {
+        if (e.response!.data is Map<String, dynamic>) {
+          final errorData = e.response!.data as Map<String, dynamic>;
+          final message = errorData['message'] ?? errorData['error'] ?? 'Login failed';
+          throw message;
+        }
+      }
+      
+      throw 'Login failed. Please try again.';
+    }
+  }
+}
