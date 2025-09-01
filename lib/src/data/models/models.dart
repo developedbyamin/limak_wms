@@ -329,16 +329,17 @@ class PackageStock {
   final int? clientId;
   final int countryId;
   final int statusId;
+  final String? statusName;
   final String shippingPrice;
   final String purchaseNo;
   final String weight;
   final int? doubleCheck;
   final int isPaid;
   final String? cPaid;
-  final int depotId;
-  final String index;
-  final int number;
-  final String barcodeId;
+  final int? depotId;
+  final String? index;
+  final int? number;
+  final String? barcodeId;
   final String? link;
   final String? cargoPrice;
   final String shopName;
@@ -363,10 +364,10 @@ class PackageStock {
     this.doubleCheck,
     required this.isPaid,
     this.cPaid,
-    required this.depotId,
-    required this.index,
-    required this.number,
-    required this.barcodeId,
+    this.depotId,
+    this.index,
+    this.number,
+    this.barcodeId,
     this.link,
     this.cargoPrice,
     required this.shopName,
@@ -378,36 +379,38 @@ class PackageStock {
     this.clientName,
     this.clientSurname,
     required this.actionDate,
+    required this.statusName,
   });
 
   factory PackageStock.fromJson(Map<String, dynamic> json) {
     return PackageStock(
-      id: json['id'],
-      regionId: json['region_id'],
+      id: json['id'] ?? 0,
+      regionId: json['region_id'] ?? 0,
       clientId: json['client_id'],
-      countryId: json['country_id'],
-      statusId: json['status_id'],
-      shippingPrice: json['shipping_price'] ?? '0.00',
-      purchaseNo: json['purchase_no'] ?? '',
-      weight: json['weight'] ?? '0.00',
+      countryId: json['country_id'] ?? 0,
+      statusId: json['status_id'] ?? 0,
+      shippingPrice: json['shipping_price']?.toString() ?? '0.00',
+      purchaseNo: json['purchase_no']?.toString() ?? '',
+      weight: json['weight']?.toString() ?? '0.00',
       doubleCheck: json['double_check'],
       isPaid: json['is_paid'] ?? 0,
-      cPaid: json['c_paid'],
+      cPaid: json['c_paid']?.toString(),
       depotId: json['depot_id'],
-      index: json['index'] ?? '',
+      index: json['index']?.toString(),
       number: json['number'],
-      barcodeId: json['barcode_id'] ?? '',
-      link: json['link'],
-      cargoPrice: json['cargo_price'],
-      shopName: json['shop_name'] ?? '',
-      adminName: json['admin_name'] ?? '',
-      adminSurname: json['admin_surname'] ?? '',
-      price: json['price'] ?? '0.00',
-      productTypeName: json['product_type_name'] ?? '',
+      barcodeId: json['barcode_id']?.toString(),
+      link: json['link']?.toString(),
+      cargoPrice: json['cargo_price']?.toString(),
+      shopName: json['shop_name']?.toString() ?? '',
+      adminName: json['admin_name']?.toString() ?? '',
+      adminSurname: json['admin_surname']?.toString() ?? '',
+      price: json['price']?.toString() ?? '0.00',
+      productTypeName: json['product_type_name']?.toString() ?? '',
       quantity: json['quantity'] ?? 1,
-      clientName: json['client_name'],
-      clientSurname: json['client_surname'],
-      actionDate: json['action_date'] ?? '',
+      clientName: json['client_name']?.toString(),
+      clientSurname: json['client_surname']?.toString(),
+      actionDate: json['action_date']?.toString() ?? '',
+      statusName: json['status_name']?.toString() ?? '',
     );
   }
 }
@@ -430,11 +433,11 @@ class UserContact {
 
   factory UserContact.fromJson(Map<String, dynamic> json) {
     return UserContact(
-      id: json['id'],
-      userId: json['user_id'],
-      name: json['name'] ?? '',
-      createdAt: json['created_at'] ?? '',
-      updatedAt: json['updated_at'] ?? '',
+      id: json['id'] ?? 0,
+      userId: json['user_id'] ?? 0,
+      name: json['name']?.toString() ?? '',
+      createdAt: json['created_at']?.toString() ?? '',
+      updatedAt: json['updated_at']?.toString() ?? '',
     );
   }
 }
@@ -563,61 +566,61 @@ class PackageData {
 
   factory PackageData.fromJson(Map<String, dynamic> json) {
     return PackageData(
-      id: json['id'],
-      regionId: json['region_id'],
-      serialNumber: json['serial_number'] ?? '',
-      passportDate: json['passport_date'],
-      citizenship: json['citizenship'] ?? '',
-      balance: json['balance'] ?? '0.00',
-      balanceTry: json['balance_try'] ?? '0.00',
-      balanceUsd: json['balance_usd'] ?? '0.00',
-      orderBalance: json['order_balance'] ?? '0.00',
-      pin: json['pin'] ?? '',
-      name: json['name'] ?? '',
-      surname: json['surname'] ?? '',
-      email: json['email'] ?? '',
-      address: json['address'] ?? '',
-      birthdate: json['birthdate'] ?? '',
+      id: json['id'] ?? 0,
+      regionId: json['region_id'] ?? 0,
+      serialNumber: json['serial_number']?.toString() ?? '',
+      passportDate: json['passport_date']?.toString(),
+      citizenship: json['citizenship']?.toString() ?? '',
+      balance: json['balance']?.toString() ?? '0.00',
+      balanceTry: json['balance_try']?.toString() ?? '0.00',
+      balanceUsd: json['balance_usd']?.toString() ?? '0.00',
+      orderBalance: json['order_balance']?.toString() ?? '0.00',
+      pin: json['pin']?.toString() ?? '',
+      name: json['name']?.toString() ?? '',
+      surname: json['surname']?.toString() ?? '',
+      email: json['email']?.toString() ?? '',
+      address: json['address']?.toString() ?? '',
+      birthdate: json['birthdate']?.toString() ?? '',
       gender: json['gender'] ?? 0,
-      nationality: json['nationality'] ?? '',
-      createdAt: json['created_at'] ?? '',
-      updatedAt: json['updated_at'] ?? '',
-      uniqid: json['uniqid'] ?? '',
+      nationality: json['nationality']?.toString() ?? '',
+      createdAt: json['created_at']?.toString() ?? '',
+      updatedAt: json['updated_at']?.toString() ?? '',
+      uniqid: json['uniqid']?.toString() ?? '',
       isBlacklist: json['is_blacklist'] ?? 0,
       isPudoCustomer: json['is_pudo_customer'] ?? 0,
       isBlocked: json['is_blocked'] ?? 0,
       isProblematic: json['is_problematic'] ?? 0,
       invoiceProblem: json['invoice_problem'] ?? 0,
       activated: json['activated'] ?? 0,
-      activationCode: json['activation_code'] ?? '',
+      activationCode: json['activation_code']?.toString() ?? '',
       mid: json['mid'] ?? 0,
-      apiKey: json['api_key'] ?? '',
-      fcmToken: json['fcm_token'] ?? '',
-      appVersion: json['app_version'],
-      appOs: json['app_os'],
+      apiKey: json['api_key']?.toString() ?? '',
+      fcmToken: json['fcm_token']?.toString() ?? '',
+      appVersion: json['app_version']?.toString(),
+      appOs: json['app_os']?.toString(),
       isPremium: json['is_premium'] ?? 0,
       shop: json['shop'] ?? 0,
-      shopCountry: json['shop_country'],
+      shopCountry: json['shop_country']?.toString(),
       corporate: json['corporate'] ?? 0,
-      tariffs: json['tariffs'],
+      tariffs: json['tariffs']?.toString(),
       discountPercent: json['discount_percent'] ?? 0,
-      comment: json['comment'],
-      onlineSms: json['online_sms'] ?? '',
+      comment: json['comment']?.toString(),
+      onlineSms: json['online_sms']?.toString() ?? '',
       trBlock: json['tr_block'] ?? 0,
-      lang: json['lang'] ?? 'az',
-      bonusBalance: json['bonus_balance'] ?? '0.00',
+      lang: json['lang']?.toString() ?? 'az',
+      bonusBalance: json['bonus_balance']?.toString() ?? '0.00',
       bonusBalancePending: json['bonus_balance_pending'] ?? 0,
       type: json['type'] ?? 0,
       legalPerson: json['legal_person'] ?? 0,
-      companyName: json['company_name'],
-      voen: json['voen'],
+      companyName: json['company_name']?.toString(),
+      voen: json['voen']?.toString(),
       notificationType: json['notification_type'] ?? 0,
       isTrendyol: json['is_trendyol'] ?? 0,
-      digitalLoginInfo: json['digital_login_info'],
+      digitalLoginInfo: json['digital_login_info']?.toString(),
       isOzon: json['is_ozon'] ?? 0,
       isTemu: json['is_temu'] ?? 0,
-      toCountry: json['to_country'] ?? '',
-      deletedAt: json['deleted_at'],
+      toCountry: json['to_country']?.toString() ?? '',
+      deletedAt: json['deleted_at']?.toString(),
       stock: (json['stock'] as List<dynamic>?)
           ?.map((item) => PackageStock.fromJson(item))
           .toList() ?? [],
@@ -646,6 +649,44 @@ class PackageResponse {
       error: json['error'] ?? false,
       data: json['data'] != null ? PackageData.fromJson(json['data']) : null,
       message: json['message'],
+    );
+  }
+}
+
+// Delivery Result Model
+class DeliveryResult {
+  final bool error;
+  final String? message;
+
+  DeliveryResult({
+    required this.error,
+    this.message,
+  });
+
+  factory DeliveryResult.fromJson(Map<String, dynamic> json) {
+    return DeliveryResult(
+      error: json['error'] ?? false,
+      message: json['message'],
+    );
+  }
+}
+
+// Delivery Response Model
+class DeliveryResponse {
+  final bool error;
+  final List<DeliveryResult> data;
+
+  DeliveryResponse({
+    required this.error,
+    required this.data,
+  });
+
+  factory DeliveryResponse.fromJson(Map<String, dynamic> json) {
+    return DeliveryResponse(
+      error: json['error'] ?? false,
+      data: (json['data'] as List<dynamic>?)
+          ?.map((item) => DeliveryResult.fromJson(item))
+          .toList() ?? [],
     );
   }
 }

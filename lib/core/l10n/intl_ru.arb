@@ -175,5 +175,18 @@
   "status": "Статус",
   "actionDate": "Дата Действия",
   "noPackagesFound": "Посылки не найдены",
-  "searchHint": "Введите хотя бы один параметр поиска"
+  "searchHint": "Введите хотя бы один параметр поиска",
+  "deliverPackages": "Доставить Посылки",
+  "selectPackages": "Выбрать Посылки",
+  "selectAll": "Выбрать Все",
+  "deselectAll": "Отменить Все",
+  "selectedPackages": "Выбранные Посылки",
+  "proveImage": "Доказательство",
+  "takePhoto": "Сделать Фото",
+  "chooseFromGallery": "Выбрать из Галереи",
+  "imageRequired": "Пожалуйста, выберите фото доказательства",
+  "packagesRequired": "Пожалуйста, выберите хотя бы одну посылку",
+  "deliverySuccess": "Посылки успешно доставлены",
+  "deliveryFailed": "Доставка не удалась",
+  "selectImage": "Выбрать Изображение"
 }

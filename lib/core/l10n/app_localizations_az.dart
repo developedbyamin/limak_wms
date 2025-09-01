@@ -204,7 +204,7 @@ class AppLocalizationsAz extends AppLocalizations {
   String get gallery => 'Qalereya';
 
   @override
-  String get chooseFromGallery => 'Qalereyadan seçin';
+  String get chooseFromGallery => 'Qalereyadan Seç';
 
   @override
   String get parcelAcceptedSuccessfully => 'Bağlama uğurla qəbul edildi';
@@ -524,4 +524,40 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get searchHint => 'Ən azı bir axtarış parametri daxil edin';
+
+  @override
+  String get deliverPackages => 'Paketləri Çatdır';
+
+  @override
+  String get selectPackages => 'Paketləri Seç';
+
+  @override
+  String get selectAll => 'Hamısını Seç';
+
+  @override
+  String get deselectAll => 'Hamısını Ləğv Et';
+
+  @override
+  String get selectedPackages => 'Seçilmiş Paketlər';
+
+  @override
+  String get proveImage => 'Sübut Şəkli';
+
+  @override
+  String get takePhoto => 'Foto Çək';
+
+  @override
+  String get imageRequired => 'Zəhmət olmasa sübut şəkli seçin';
+
+  @override
+  String get packagesRequired => 'Zəhmət olmasa ən azı bir paket seçin';
+
+  @override
+  String get deliverySuccess => 'Paketlər uğurla çatdırıldı';
+
+  @override
+  String get deliveryFailed => 'Çatdırılma uğursuz oldu';
+
+  @override
+  String get selectImage => 'Şəkil Seç';
 }

@@ -175,5 +175,18 @@
   "status": "Status",
   "actionDate": "Əməliyyat Tarixi",
   "noPackagesFound": "Heç bir paket tapılmadı",
-  "searchHint": "Ən azı bir axtarış parametri daxil edin"
+  "searchHint": "Ən azı bir axtarış parametri daxil edin",
+  "deliverPackages": "Paketləri Çatdır",
+  "selectPackages": "Paketləri Seç",
+  "selectAll": "Hamısını Seç",
+  "deselectAll": "Hamısını Ləğv Et",
+  "selectedPackages": "Seçilmiş Paketlər",
+  "proveImage": "Sübut Şəkli",
+  "takePhoto": "Foto Çək",
+  "chooseFromGallery": "Qalereyadan Seç",
+  "imageRequired": "Zəhmət olmasa sübut şəkli seçin",
+  "packagesRequired": "Zəhmət olmasa ən azı bir paket seçin",
+  "deliverySuccess": "Paketlər uğurla çatdırıldı",
+  "deliveryFailed": "Çatdırılma uğursuz oldu",
+  "selectImage": "Şəkil Seç"
 }

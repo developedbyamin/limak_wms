@@ -51,4 +51,9 @@ class RegionCubit extends Cubit<RegionState> {
       emit(currentState.copyWith(selectedRegion: null));
     }
   }
+
+  // Get selected region name from cubit state
+  String? get selectedRegionName {
+    return selectedRegion?.name;
+  }
 }

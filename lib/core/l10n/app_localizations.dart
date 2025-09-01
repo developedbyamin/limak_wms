@@ -493,7 +493,7 @@ abstract class AppLocalizations {
   /// No description provided for @chooseFromGallery.
   ///
   /// In az, this message translates to:
-  /// **'Qalereyadan seçin'**
+  /// **'Qalereyadan Seç'**
   String get chooseFromGallery;
 
   /// No description provided for @parcelAcceptedSuccessfully.
@@ -1113,6 +1113,78 @@ abstract class AppLocalizations {
   /// In az, this message translates to:
   /// **'Ən azı bir axtarış parametri daxil edin'**
   String get searchHint;
+
+  /// No description provided for @deliverPackages.
+  ///
+  /// In az, this message translates to:
+  /// **'Paketləri Çatdır'**
+  String get deliverPackages;
+
+  /// No description provided for @selectPackages.
+  ///
+  /// In az, this message translates to:
+  /// **'Paketləri Seç'**
+  String get selectPackages;
+
+  /// No description provided for @selectAll.
+  ///
+  /// In az, this message translates to:
+  /// **'Hamısını Seç'**
+  String get selectAll;
+
+  /// No description provided for @deselectAll.
+  ///
+  /// In az, this message translates to:
+  /// **'Hamısını Ləğv Et'**
+  String get deselectAll;
+
+  /// No description provided for @selectedPackages.
+  ///
+  /// In az, this message translates to:
+  /// **'Seçilmiş Paketlər'**
+  String get selectedPackages;
+
+  /// No description provided for @proveImage.
+  ///
+  /// In az, this message translates to:
+  /// **'Sübut Şəkli'**
+  String get proveImage;
+
+  /// No description provided for @takePhoto.
+  ///
+  /// In az, this message translates to:
+  /// **'Foto Çək'**
+  String get takePhoto;
+
+  /// No description provided for @imageRequired.
+  ///
+  /// In az, this message translates to:
+  /// **'Zəhmət olmasa sübut şəkli seçin'**
+  String get imageRequired;
+
+  /// No description provided for @packagesRequired.
+  ///
+  /// In az, this message translates to:
+  /// **'Zəhmət olmasa ən azı bir paket seçin'**
+  String get packagesRequired;
+
+  /// No description provided for @deliverySuccess.
+  ///
+  /// In az, this message translates to:
+  /// **'Paketlər uğurla çatdırıldı'**
+  String get deliverySuccess;
+
+  /// No description provided for @deliveryFailed.
+  ///
+  /// In az, this message translates to:
+  /// **'Çatdırılma uğursuz oldu'**
+  String get deliveryFailed;
+
+  /// No description provided for @selectImage.
+  ///
+  /// In az, this message translates to:
+  /// **'Şəkil Seç'**
+  String get selectImage;
 }
 
 class _AppLocalizationsDelegate

@@ -204,7 +204,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get gallery => 'Галерея';
 
   @override
-  String get chooseFromGallery => 'Выбрать из галереи';
+  String get chooseFromGallery => 'Выбрать из Галереи';
 
   @override
   String get parcelAcceptedSuccessfully => 'Посылка успешно принята';
@@ -523,4 +523,40 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get searchHint => 'Введите хотя бы один параметр поиска';
+
+  @override
+  String get deliverPackages => 'Доставить Посылки';
+
+  @override
+  String get selectPackages => 'Выбрать Посылки';
+
+  @override
+  String get selectAll => 'Выбрать Все';
+
+  @override
+  String get deselectAll => 'Отменить Все';
+
+  @override
+  String get selectedPackages => 'Выбранные Посылки';
+
+  @override
+  String get proveImage => 'Доказательство';
+
+  @override
+  String get takePhoto => 'Сделать Фото';
+
+  @override
+  String get imageRequired => 'Пожалуйста, выберите фото доказательства';
+
+  @override
+  String get packagesRequired => 'Пожалуйста, выберите хотя бы одну посылку';
+
+  @override
+  String get deliverySuccess => 'Посылки успешно доставлены';
+
+  @override
+  String get deliveryFailed => 'Доставка не удалась';
+
+  @override
+  String get selectImage => 'Выбрать Изображение';
 }

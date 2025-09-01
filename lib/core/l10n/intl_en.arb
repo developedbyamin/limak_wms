@@ -175,5 +175,18 @@
   "status": "Status",
   "actionDate": "Action Date",
   "noPackagesFound": "No packages found",
-  "searchHint": "Enter at least one search parameter"
+  "searchHint": "Enter at least one search parameter",
+  "deliverPackages": "Deliver Packages",
+  "selectPackages": "Select Packages",
+  "selectAll": "Select All",
+  "deselectAll": "Deselect All",
+  "selectedPackages": "Selected Packages",
+  "proveImage": "Proof Image",
+  "takePhoto": "Take Photo",
+  "chooseFromGallery": "Choose from Gallery",
+  "imageRequired": "Please select a proof image",
+  "packagesRequired": "Please select at least one package",
+  "deliverySuccess": "Packages delivered successfully",
+  "deliveryFailed": "Delivery failed",
+  "selectImage": "Select Image"
 }

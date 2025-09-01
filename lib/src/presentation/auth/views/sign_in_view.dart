@@ -101,28 +101,145 @@ class _SignInViewState extends State<SignInView> {
                               alignment: Alignment.centerRight,
                               child: Container(
                                 margin: const EdgeInsets.only(bottom: 20),
+                                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                                decoration: BoxDecoration(
+                                  color: Colors.white.withOpacity(0.15),
+                                  borderRadius: BorderRadius.circular(12),
+                                  border: Border.all(
+                                    color: Colors.white.withOpacity(0.3),
+                                    width: 1,
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.1),
+                                      blurRadius: 8,
+                                      offset: const Offset(0, 2),
+                                    ),
+                                  ],
+                                ),
                                 child: DropdownButton<Locale>(
                                   value: context.watch<LocalizationCubit>().state,
-                                  dropdownColor: AppColors.whiteColor,
-                                  icon: Icon(Icons.language, color: AppColors.whiteColor),
+                                  dropdownColor: Colors.white,
+                                  icon: Icon(
+                                    Icons.keyboard_arrow_down,
+                                    color: Colors.white,
+                                    size: 20,
+                                  ),
                                   underline: Container(),
+                                  borderRadius: BorderRadius.circular(12),
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  selectedItemBuilder: (BuildContext context) {
+                                    return [
+                                      Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          const Text('🇦🇿', style: TextStyle(fontSize: 16)),
+                                          const SizedBox(width: 8),
+                                          const Text(
+                                            'Azərbaycan',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          const Text('🇺🇸', style: TextStyle(fontSize: 16)),
+                                          const SizedBox(width: 8),
+                                          const Text(
+                                            'English',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          const Text('🇷🇺', style: TextStyle(fontSize: 16)),
+                                          const SizedBox(width: 8),
+                                          const Text(
+                                            'Русский',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ];
+                                  },
                                   onChanged: (Locale? newLocale) {
                                     if (newLocale != null) {
                                       context.read<LocalizationCubit>().changeLocale(newLocale);
                                     }
                                   },
-                                  items: const [
+                                  items: [
                                     DropdownMenuItem(
-                                      value: Locale('az'),
-                                      child: Text('Azərbaycan', style: TextStyle(color: Colors.black)),
+                                      value: const Locale('az'),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          const Text('🇦🇿', style: TextStyle(fontSize: 20)),
+                                          const SizedBox(width: 8),
+                                          const Text(
+                                            'Azərbaycan',
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                     DropdownMenuItem(
-                                      value: Locale('en'),
-                                      child: Text('English', style: TextStyle(color: Colors.black)),
+                                      value: const Locale('en'),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          const Text('🇺🇸', style: TextStyle(fontSize: 20)),
+                                          const SizedBox(width: 8),
+                                          const Text(
+                                            'English',
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                     DropdownMenuItem(
-                                      value: Locale('ru'),
-                                      child: Text('Русский', style: TextStyle(color: Colors.black)),
+                                      value: const Locale('ru'),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          const Text('🇷🇺', style: TextStyle(fontSize: 20)),
+                                          const SizedBox(width: 8),
+                                          const Text(
+                                            'Русский',
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ],
                                 ),

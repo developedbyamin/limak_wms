@@ -204,7 +204,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get gallery => 'Gallery';
 
   @override
-  String get chooseFromGallery => 'Choose from gallery';
+  String get chooseFromGallery => 'Choose from Gallery';
 
   @override
   String get parcelAcceptedSuccessfully => 'Parcel accepted successfully';
@@ -522,4 +522,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get searchHint => 'Enter at least one search parameter';
+
+  @override
+  String get deliverPackages => 'Deliver Packages';
+
+  @override
+  String get selectPackages => 'Select Packages';
+
+  @override
+  String get selectAll => 'Select All';
+
+  @override
+  String get deselectAll => 'Deselect All';
+
+  @override
+  String get selectedPackages => 'Selected Packages';
+
+  @override
+  String get proveImage => 'Proof Image';
+
+  @override
+  String get takePhoto => 'Take Photo';
+
+  @override
+  String get imageRequired => 'Please select a proof image';
+
+  @override
+  String get packagesRequired => 'Please select at least one package';
+
+  @override
+  String get deliverySuccess => 'Packages delivered successfully';
+
+  @override
+  String get deliveryFailed => 'Delivery failed';
+
+  @override
+  String get selectImage => 'Select Image';
 }

@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:limak_courier/core/utils/storage/secure_storage.dart';
 import 'package:limak_courier/src/data/models/models.dart';
+import 'dart:io';
 
 class CourierService {
   final Dio _dio;
@@ -127,6 +128,51 @@ class CourierService {
       }
       
       throw 'Failed to fetch packages. Please try again.';
+    }
+  }
+
+  // Deliver Packages
+  Future<DeliveryResponse> deliverPackages({
+    required int regionId,
+    required List<String> invoiceIds,
+    required File proveImage,
+  }) async {
+    try {
+      debugPrint('Delivering packages - Region: $regionId, Invoices: ${invoiceIds.join(",")}');
+
+      // Create form data
+      final formData = FormData.fromMap({
+        'region_id': regionId,
+        'invoice_ids': invoiceIds.join(','),
+        'prove_image': await MultipartFile.fromFile(
+          proveImage.path,
+          filename: 'prove_image.jpg',
+        ),
+      });
+
+      final response = await _dio.post('/deliver', data: formData);
+
+      debugPrint('Deliver response status: ${response.statusCode}');
+      debugPrint('Deliver response data: ${response.data}');
+
+      if (response.statusCode == 200) {
+        return DeliveryResponse.fromJson(response.data);
+      } else {
+        throw 'Failed to deliver packages with status: ${response.statusCode}';
+      }
+    } on DioException catch (e) {
+      debugPrint('Deliver DioException: ${e.response?.statusCode} - ${e.response?.data}');
+      
+      // Try to extract error message from response
+      if (e.response?.data != null) {
+        if (e.response!.data is Map<String, dynamic>) {
+          final errorData = e.response!.data as Map<String, dynamic>;
+          final message = errorData['message'] ?? errorData['error'] ?? 'Failed to deliver packages';
+          throw message;
+        }
+      }
+      
+      throw 'Failed to deliver packages. Please try again.';
     }
   }
 
