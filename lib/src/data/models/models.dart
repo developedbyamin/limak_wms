@@ -240,3 +240,412 @@ class RegionDetailsResponse {
     );
   }
 }
+
+// Storage Model
+class Storage {
+  final int id;
+  final int regionId;
+  final String index;
+  final int number;
+  final String capacity;
+  final int size;
+  final int box;
+  final String barcodeId;
+  final String createdAt;
+  final String updatedAt;
+
+  Storage({
+    required this.id,
+    required this.regionId,
+    required this.index,
+    required this.number,
+    required this.capacity,
+    required this.size,
+    required this.box,
+    required this.barcodeId,
+    required this.createdAt,
+    required this.updatedAt,
+  });
+
+  factory Storage.fromJson(Map<String, dynamic> json) {
+    return Storage(
+      id: json['id'],
+      regionId: json['region_id'],
+      index: json['index'],
+      number: json['number'],
+      capacity: json['capacity'],
+      size: json['size'],
+      box: json['box'],
+      barcodeId: json['barcode_id'],
+      createdAt: json['created_at'],
+      updatedAt: json['updated_at'],
+    );
+  }
+}
+
+// Storage Response Model
+class StorageResponse {
+  final bool error;
+  final Storage? data;
+  final String? message;
+
+  StorageResponse({
+    required this.error,
+    this.data,
+    this.message,
+  });
+
+  factory StorageResponse.fromJson(Map<String, dynamic> json) {
+    return StorageResponse(
+      error: json['error'] ?? false,
+      data: json['data'] != null ? Storage.fromJson(json['data']) : null,
+      message: json['message'],
+    );
+  }
+}
+
+// Store In Depot Response Model
+class StoreInDepotResponse {
+  final bool error;
+  final String message;
+
+  StoreInDepotResponse({
+    required this.error,
+    required this.message,
+  });
+
+  factory StoreInDepotResponse.fromJson(Map<String, dynamic> json) {
+    return StoreInDepotResponse(
+      error: json['error'] ?? false,
+      message: json['message'] ?? '',
+    );
+  }
+}
+
+// Package Stock Model
+class PackageStock {
+  final int id;
+  final int regionId;
+  final int? clientId;
+  final int countryId;
+  final int statusId;
+  final String shippingPrice;
+  final String purchaseNo;
+  final String weight;
+  final int? doubleCheck;
+  final int isPaid;
+  final String? cPaid;
+  final int depotId;
+  final String index;
+  final int number;
+  final String barcodeId;
+  final String? link;
+  final String? cargoPrice;
+  final String shopName;
+  final String adminName;
+  final String adminSurname;
+  final String price;
+  final String productTypeName;
+  final int quantity;
+  final String? clientName;
+  final String? clientSurname;
+  final String actionDate;
+
+  PackageStock({
+    required this.id,
+    required this.regionId,
+    this.clientId,
+    required this.countryId,
+    required this.statusId,
+    required this.shippingPrice,
+    required this.purchaseNo,
+    required this.weight,
+    this.doubleCheck,
+    required this.isPaid,
+    this.cPaid,
+    required this.depotId,
+    required this.index,
+    required this.number,
+    required this.barcodeId,
+    this.link,
+    this.cargoPrice,
+    required this.shopName,
+    required this.adminName,
+    required this.adminSurname,
+    required this.price,
+    required this.productTypeName,
+    required this.quantity,
+    this.clientName,
+    this.clientSurname,
+    required this.actionDate,
+  });
+
+  factory PackageStock.fromJson(Map<String, dynamic> json) {
+    return PackageStock(
+      id: json['id'],
+      regionId: json['region_id'],
+      clientId: json['client_id'],
+      countryId: json['country_id'],
+      statusId: json['status_id'],
+      shippingPrice: json['shipping_price'] ?? '0.00',
+      purchaseNo: json['purchase_no'] ?? '',
+      weight: json['weight'] ?? '0.00',
+      doubleCheck: json['double_check'],
+      isPaid: json['is_paid'] ?? 0,
+      cPaid: json['c_paid'],
+      depotId: json['depot_id'],
+      index: json['index'] ?? '',
+      number: json['number'],
+      barcodeId: json['barcode_id'] ?? '',
+      link: json['link'],
+      cargoPrice: json['cargo_price'],
+      shopName: json['shop_name'] ?? '',
+      adminName: json['admin_name'] ?? '',
+      adminSurname: json['admin_surname'] ?? '',
+      price: json['price'] ?? '0.00',
+      productTypeName: json['product_type_name'] ?? '',
+      quantity: json['quantity'] ?? 1,
+      clientName: json['client_name'],
+      clientSurname: json['client_surname'],
+      actionDate: json['action_date'] ?? '',
+    );
+  }
+}
+
+// User Contact Model
+class UserContact {
+  final int id;
+  final int userId;
+  final String name;
+  final String createdAt;
+  final String updatedAt;
+
+  UserContact({
+    required this.id,
+    required this.userId,
+    required this.name,
+    required this.createdAt,
+    required this.updatedAt,
+  });
+
+  factory UserContact.fromJson(Map<String, dynamic> json) {
+    return UserContact(
+      id: json['id'],
+      userId: json['user_id'],
+      name: json['name'] ?? '',
+      createdAt: json['created_at'] ?? '',
+      updatedAt: json['updated_at'] ?? '',
+    );
+  }
+}
+
+// Package Data Model
+class PackageData {
+  final int id;
+  final int regionId;
+  final String serialNumber;
+  final String? passportDate;
+  final String citizenship;
+  final String balance;
+  final String balanceTry;
+  final String balanceUsd;
+  final String orderBalance;
+  final String pin;
+  final String name;
+  final String surname;
+  final String email;
+  final String address;
+  final String birthdate;
+  final int gender;
+  final String nationality;
+  final String createdAt;
+  final String updatedAt;
+  final String uniqid;
+  final int isBlacklist;
+  final int isPudoCustomer;
+  final int isBlocked;
+  final int isProblematic;
+  final int invoiceProblem;
+  final int activated;
+  final String activationCode;
+  final int mid;
+  final String apiKey;
+  final String fcmToken;
+  final String? appVersion;
+  final String? appOs;
+  final int isPremium;
+  final int shop;
+  final String? shopCountry;
+  final int corporate;
+  final String? tariffs;
+  final int discountPercent;
+  final String? comment;
+  final String onlineSms;
+  final int trBlock;
+  final String lang;
+  final String bonusBalance;
+  final int bonusBalancePending;
+  final int type;
+  final int legalPerson;
+  final String? companyName;
+  final String? voen;
+  final int notificationType;
+  final int isTrendyol;
+  final String? digitalLoginInfo;
+  final int isOzon;
+  final int isTemu;
+  final String toCountry;
+  final String? deletedAt;
+  final List<PackageStock> stock;
+  final double allWeight;
+  final List<UserContact> userContacts;
+
+  PackageData({
+    required this.id,
+    required this.regionId,
+    required this.serialNumber,
+    this.passportDate,
+    required this.citizenship,
+    required this.balance,
+    required this.balanceTry,
+    required this.balanceUsd,
+    required this.orderBalance,
+    required this.pin,
+    required this.name,
+    required this.surname,
+    required this.email,
+    required this.address,
+    required this.birthdate,
+    required this.gender,
+    required this.nationality,
+    required this.createdAt,
+    required this.updatedAt,
+    required this.uniqid,
+    required this.isBlacklist,
+    required this.isPudoCustomer,
+    required this.isBlocked,
+    required this.isProblematic,
+    required this.invoiceProblem,
+    required this.activated,
+    required this.activationCode,
+    required this.mid,
+    required this.apiKey,
+    required this.fcmToken,
+    this.appVersion,
+    this.appOs,
+    required this.isPremium,
+    required this.shop,
+    this.shopCountry,
+    required this.corporate,
+    this.tariffs,
+    required this.discountPercent,
+    this.comment,
+    required this.onlineSms,
+    required this.trBlock,
+    required this.lang,
+    required this.bonusBalance,
+    required this.bonusBalancePending,
+    required this.type,
+    required this.legalPerson,
+    this.companyName,
+    this.voen,
+    required this.notificationType,
+    required this.isTrendyol,
+    this.digitalLoginInfo,
+    required this.isOzon,
+    required this.isTemu,
+    required this.toCountry,
+    this.deletedAt,
+    required this.stock,
+    required this.allWeight,
+    required this.userContacts,
+  });
+
+  factory PackageData.fromJson(Map<String, dynamic> json) {
+    return PackageData(
+      id: json['id'],
+      regionId: json['region_id'],
+      serialNumber: json['serial_number'] ?? '',
+      passportDate: json['passport_date'],
+      citizenship: json['citizenship'] ?? '',
+      balance: json['balance'] ?? '0.00',
+      balanceTry: json['balance_try'] ?? '0.00',
+      balanceUsd: json['balance_usd'] ?? '0.00',
+      orderBalance: json['order_balance'] ?? '0.00',
+      pin: json['pin'] ?? '',
+      name: json['name'] ?? '',
+      surname: json['surname'] ?? '',
+      email: json['email'] ?? '',
+      address: json['address'] ?? '',
+      birthdate: json['birthdate'] ?? '',
+      gender: json['gender'] ?? 0,
+      nationality: json['nationality'] ?? '',
+      createdAt: json['created_at'] ?? '',
+      updatedAt: json['updated_at'] ?? '',
+      uniqid: json['uniqid'] ?? '',
+      isBlacklist: json['is_blacklist'] ?? 0,
+      isPudoCustomer: json['is_pudo_customer'] ?? 0,
+      isBlocked: json['is_blocked'] ?? 0,
+      isProblematic: json['is_problematic'] ?? 0,
+      invoiceProblem: json['invoice_problem'] ?? 0,
+      activated: json['activated'] ?? 0,
+      activationCode: json['activation_code'] ?? '',
+      mid: json['mid'] ?? 0,
+      apiKey: json['api_key'] ?? '',
+      fcmToken: json['fcm_token'] ?? '',
+      appVersion: json['app_version'],
+      appOs: json['app_os'],
+      isPremium: json['is_premium'] ?? 0,
+      shop: json['shop'] ?? 0,
+      shopCountry: json['shop_country'],
+      corporate: json['corporate'] ?? 0,
+      tariffs: json['tariffs'],
+      discountPercent: json['discount_percent'] ?? 0,
+      comment: json['comment'],
+      onlineSms: json['online_sms'] ?? '',
+      trBlock: json['tr_block'] ?? 0,
+      lang: json['lang'] ?? 'az',
+      bonusBalance: json['bonus_balance'] ?? '0.00',
+      bonusBalancePending: json['bonus_balance_pending'] ?? 0,
+      type: json['type'] ?? 0,
+      legalPerson: json['legal_person'] ?? 0,
+      companyName: json['company_name'],
+      voen: json['voen'],
+      notificationType: json['notification_type'] ?? 0,
+      isTrendyol: json['is_trendyol'] ?? 0,
+      digitalLoginInfo: json['digital_login_info'],
+      isOzon: json['is_ozon'] ?? 0,
+      isTemu: json['is_temu'] ?? 0,
+      toCountry: json['to_country'] ?? '',
+      deletedAt: json['deleted_at'],
+      stock: (json['stock'] as List<dynamic>?)
+          ?.map((item) => PackageStock.fromJson(item))
+          .toList() ?? [],
+      allWeight: (json['all_weight'] as num?)?.toDouble() ?? 0.0,
+      userContacts: (json['user_contacts'] as List<dynamic>?)
+          ?.map((item) => UserContact.fromJson(item))
+          .toList() ?? [],
+    );
+  }
+}
+
+// Package Response Model
+class PackageResponse {
+  final bool error;
+  final PackageData? data;
+  final String? message;
+
+  PackageResponse({
+    required this.error,
+    this.data,
+    this.message,
+  });
+
+  factory PackageResponse.fromJson(Map<String, dynamic> json) {
+    return PackageResponse(
+      error: json['error'] ?? false,
+      data: json['data'] != null ? PackageData.fromJson(json['data']) : null,
+      message: json['message'],
+    );
+  }
+}

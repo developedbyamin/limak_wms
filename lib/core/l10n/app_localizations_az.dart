@@ -397,4 +397,131 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get accountDetails => 'Hesab Təfərrüatları';
+
+  @override
+  String get qr => 'QR';
+
+  @override
+  String get scanStorageBarcode => 'Anbar Barkodunu Skan Et';
+
+  @override
+  String get scanInvoiceBarcode => 'Faktura Barkodunu Skan Et';
+
+  @override
+  String get storageFound => 'Anbar Tapıldı';
+
+  @override
+  String get storageDetails => 'Anbar Təfərrüatları';
+
+  @override
+  String get storageId => 'Anbar ID';
+
+  @override
+  String get storageCapacity => 'Tutum';
+
+  @override
+  String get storageSize => 'Ölçü';
+
+  @override
+  String get storageBox => 'Qutu';
+
+  @override
+  String get continueToInvoice => 'Faktura Skanına Davam Et';
+
+  @override
+  String get scanAgain => 'Təkrar';
+
+  @override
+  String get invoiceStored => 'Faktura Uğurla Saxlanıldı';
+
+  @override
+  String get backToStorage => 'Anbar Skanına Qayıt';
+
+  @override
+  String get scanNewStorage => 'Yeni Anbar Skan Et';
+
+  @override
+  String get positionCamera =>
+      'Kameranı QR kod və ya barkod üzərinə yerləşdirin';
+
+  @override
+  String get invalidBarcode => 'Yanlış barkod formatı';
+
+  @override
+  String get storageNotFound => 'Anbar yeri tapılmadı';
+
+  @override
+  String get invoiceNotFound => 'Faktura tapılmadı';
+
+  @override
+  String get packageSearch => 'Paket Axtarışı';
+
+  @override
+  String get uniqid => 'Unikal ID';
+
+  @override
+  String get fullname => 'Tam Ad';
+
+  @override
+  String get fin => 'FİN';
+
+  @override
+  String get purchaseNo => 'Alış Nömrəsi';
+
+  @override
+  String get searchPackages => 'Paketləri Axtar';
+
+  @override
+  String get packageDetails => 'Paket Təfərrüatları';
+
+  @override
+  String get customerInfo => 'Müştəri Məlumatları';
+
+  @override
+  String get packageStock => 'Paket Stoku';
+
+  @override
+  String get contacts => 'Əlaqələr';
+
+  @override
+  String get totalWeight => 'Ümumi Çəki';
+
+  @override
+  String get balance => 'Balans';
+
+  @override
+  String get birthdate => 'Doğum Tarixi';
+
+  @override
+  String get serialNumber => 'Seriya Nömrəsi';
+
+  @override
+  String get shopName => 'Mağaza Adı';
+
+  @override
+  String get productType => 'Məhsul Növü';
+
+  @override
+  String get weight => 'Çəki';
+
+  @override
+  String get price => 'Qiymət';
+
+  @override
+  String get shippingPrice => 'Çatdırılma Qiyməti';
+
+  @override
+  String get quantity => 'Miqdar';
+
+  @override
+  String get status => 'Status';
+
+  @override
+  String get actionDate => 'Əməliyyat Tarixi';
+
+  @override
+  String get noPackagesFound => 'Heç bir paket tapılmadı';
+
+  @override
+  String get searchHint => 'Ən azı bir axtarış parametri daxil edin';
 }

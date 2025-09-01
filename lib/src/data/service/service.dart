@@ -8,6 +8,128 @@ class CourierService {
 
   CourierService({required Dio dio}) : _dio = dio;
 
+  // Get Storage by Barcode
+  Future<StorageResponse> getStorage(String barcodeId) async {
+    try {
+      debugPrint('Fetching storage for barcode: $barcodeId');
+
+      final response = await _dio.get('/get/storage', queryParameters: {
+        'barcode_id': barcodeId,
+      });
+
+      debugPrint('Storage response status: ${response.statusCode}');
+      debugPrint('Storage response data: ${response.data}');
+
+      if (response.statusCode == 200) {
+        return StorageResponse.fromJson(response.data);
+      } else {
+        throw 'Failed to fetch storage with status: ${response.statusCode}';
+      }
+    } on DioException catch (e) {
+      debugPrint('Storage DioException: ${e.response?.statusCode} - ${e.response?.data}');
+      
+      // Try to extract error message from response
+      if (e.response?.data != null) {
+        if (e.response!.data is Map<String, dynamic>) {
+          final errorData = e.response!.data as Map<String, dynamic>;
+          final message = errorData['message'] ?? errorData['error'] ?? 'Failed to fetch storage';
+          throw message;
+        }
+      }
+      
+      throw 'Failed to fetch storage. Please try again.';
+    }
+  }
+
+  // Store in Depot
+  Future<StoreInDepotResponse> storeInDepot(int regionId, String depotId, String invoiceId) async {
+    try {
+      debugPrint('Storing in depot - Region: $regionId, Depot: $depotId, Invoice: $invoiceId');
+
+      final response = await _dio.post('/store-in-depot', queryParameters: {
+        'region_id': regionId,
+        'depot_id': depotId,
+        'invoice_id': invoiceId,
+      });
+
+      debugPrint('Store in depot response status: ${response.statusCode}');
+      debugPrint('Store in depot response data: ${response.data}');
+
+      if (response.statusCode == 200) {
+        return StoreInDepotResponse.fromJson(response.data);
+      } else {
+        throw 'Failed to store in depot with status: ${response.statusCode}';
+      }
+    } on DioException catch (e) {
+      debugPrint('Store in depot DioException: ${e.response?.statusCode} - ${e.response?.data}');
+      
+      // Try to extract error message from response
+      if (e.response?.data != null) {
+        if (e.response!.data is Map<String, dynamic>) {
+          final errorData = e.response!.data as Map<String, dynamic>;
+          final message = errorData['message'] ?? errorData['error'] ?? 'Failed to store in depot';
+          throw message;
+        }
+      }
+      
+      throw 'Failed to store in depot. Please try again.';
+    }
+  }
+
+  // Get Packages
+  Future<PackageResponse> getPackages({
+    required int regionId,
+    String? uniqid,
+    String? fullname,
+    String? fin,
+    String? purchaseNo,
+  }) async {
+    try {
+      debugPrint('Fetching packages with params: regionId=$regionId, uniqid=$uniqid, fullname=$fullname, fin=$fin, purchaseNo=$purchaseNo');
+
+      final queryParams = <String, dynamic>{
+        'region_id': regionId,
+      };
+
+      if (uniqid != null && uniqid.isNotEmpty) {
+        queryParams['uniqid'] = uniqid;
+      }
+      if (fullname != null && fullname.isNotEmpty) {
+        queryParams['fullname'] = fullname;
+      }
+      if (fin != null && fin.isNotEmpty) {
+        queryParams['fin'] = fin;
+      }
+      if (purchaseNo != null && purchaseNo.isNotEmpty) {
+        queryParams['purchase_no'] = purchaseNo;
+      }
+
+      final response = await _dio.get('/get/packages', queryParameters: queryParams);
+
+      debugPrint('Packages response status: ${response.statusCode}');
+      debugPrint('Packages response data: ${response.data}');
+
+      if (response.statusCode == 200) {
+        return PackageResponse.fromJson(response.data);
+      } else {
+        throw 'Failed to fetch packages with status: ${response.statusCode}';
+      }
+    } on DioException catch (e) {
+      debugPrint('Packages DioException: ${e.response?.statusCode} - ${e.response?.data}');
+      
+      // Try to extract error message from response
+      if (e.response?.data != null) {
+        if (e.response!.data is Map<String, dynamic>) {
+          final errorData = e.response!.data as Map<String, dynamic>;
+          final message = errorData['message'] ?? errorData['error'] ?? 'Failed to fetch packages';
+          throw message;
+        }
+      }
+      
+      throw 'Failed to fetch packages. Please try again.';
+    }
+  }
+
   // Get Region Details
   Future<RegionDetailsResponse> getRegionDetails(int regionId) async {
     try {

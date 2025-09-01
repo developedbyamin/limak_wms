@@ -861,6 +861,258 @@ abstract class AppLocalizations {
   /// In az, this message translates to:
   /// **'Hesab Təfərrüatları'**
   String get accountDetails;
+
+  /// No description provided for @qr.
+  ///
+  /// In az, this message translates to:
+  /// **'QR'**
+  String get qr;
+
+  /// No description provided for @scanStorageBarcode.
+  ///
+  /// In az, this message translates to:
+  /// **'Anbar Barkodunu Skan Et'**
+  String get scanStorageBarcode;
+
+  /// No description provided for @scanInvoiceBarcode.
+  ///
+  /// In az, this message translates to:
+  /// **'Faktura Barkodunu Skan Et'**
+  String get scanInvoiceBarcode;
+
+  /// No description provided for @storageFound.
+  ///
+  /// In az, this message translates to:
+  /// **'Anbar Tapıldı'**
+  String get storageFound;
+
+  /// No description provided for @storageDetails.
+  ///
+  /// In az, this message translates to:
+  /// **'Anbar Təfərrüatları'**
+  String get storageDetails;
+
+  /// No description provided for @storageId.
+  ///
+  /// In az, this message translates to:
+  /// **'Anbar ID'**
+  String get storageId;
+
+  /// No description provided for @storageCapacity.
+  ///
+  /// In az, this message translates to:
+  /// **'Tutum'**
+  String get storageCapacity;
+
+  /// No description provided for @storageSize.
+  ///
+  /// In az, this message translates to:
+  /// **'Ölçü'**
+  String get storageSize;
+
+  /// No description provided for @storageBox.
+  ///
+  /// In az, this message translates to:
+  /// **'Qutu'**
+  String get storageBox;
+
+  /// No description provided for @continueToInvoice.
+  ///
+  /// In az, this message translates to:
+  /// **'Faktura Skanına Davam Et'**
+  String get continueToInvoice;
+
+  /// No description provided for @scanAgain.
+  ///
+  /// In az, this message translates to:
+  /// **'Təkrar'**
+  String get scanAgain;
+
+  /// No description provided for @invoiceStored.
+  ///
+  /// In az, this message translates to:
+  /// **'Faktura Uğurla Saxlanıldı'**
+  String get invoiceStored;
+
+  /// No description provided for @backToStorage.
+  ///
+  /// In az, this message translates to:
+  /// **'Anbar Skanına Qayıt'**
+  String get backToStorage;
+
+  /// No description provided for @scanNewStorage.
+  ///
+  /// In az, this message translates to:
+  /// **'Yeni Anbar Skan Et'**
+  String get scanNewStorage;
+
+  /// No description provided for @positionCamera.
+  ///
+  /// In az, this message translates to:
+  /// **'Kameranı QR kod və ya barkod üzərinə yerləşdirin'**
+  String get positionCamera;
+
+  /// No description provided for @invalidBarcode.
+  ///
+  /// In az, this message translates to:
+  /// **'Yanlış barkod formatı'**
+  String get invalidBarcode;
+
+  /// No description provided for @storageNotFound.
+  ///
+  /// In az, this message translates to:
+  /// **'Anbar yeri tapılmadı'**
+  String get storageNotFound;
+
+  /// No description provided for @invoiceNotFound.
+  ///
+  /// In az, this message translates to:
+  /// **'Faktura tapılmadı'**
+  String get invoiceNotFound;
+
+  /// No description provided for @packageSearch.
+  ///
+  /// In az, this message translates to:
+  /// **'Paket Axtarışı'**
+  String get packageSearch;
+
+  /// No description provided for @uniqid.
+  ///
+  /// In az, this message translates to:
+  /// **'Unikal ID'**
+  String get uniqid;
+
+  /// No description provided for @fullname.
+  ///
+  /// In az, this message translates to:
+  /// **'Tam Ad'**
+  String get fullname;
+
+  /// No description provided for @fin.
+  ///
+  /// In az, this message translates to:
+  /// **'FİN'**
+  String get fin;
+
+  /// No description provided for @purchaseNo.
+  ///
+  /// In az, this message translates to:
+  /// **'Alış Nömrəsi'**
+  String get purchaseNo;
+
+  /// No description provided for @searchPackages.
+  ///
+  /// In az, this message translates to:
+  /// **'Paketləri Axtar'**
+  String get searchPackages;
+
+  /// No description provided for @packageDetails.
+  ///
+  /// In az, this message translates to:
+  /// **'Paket Təfərrüatları'**
+  String get packageDetails;
+
+  /// No description provided for @customerInfo.
+  ///
+  /// In az, this message translates to:
+  /// **'Müştəri Məlumatları'**
+  String get customerInfo;
+
+  /// No description provided for @packageStock.
+  ///
+  /// In az, this message translates to:
+  /// **'Paket Stoku'**
+  String get packageStock;
+
+  /// No description provided for @contacts.
+  ///
+  /// In az, this message translates to:
+  /// **'Əlaqələr'**
+  String get contacts;
+
+  /// No description provided for @totalWeight.
+  ///
+  /// In az, this message translates to:
+  /// **'Ümumi Çəki'**
+  String get totalWeight;
+
+  /// No description provided for @balance.
+  ///
+  /// In az, this message translates to:
+  /// **'Balans'**
+  String get balance;
+
+  /// No description provided for @birthdate.
+  ///
+  /// In az, this message translates to:
+  /// **'Doğum Tarixi'**
+  String get birthdate;
+
+  /// No description provided for @serialNumber.
+  ///
+  /// In az, this message translates to:
+  /// **'Seriya Nömrəsi'**
+  String get serialNumber;
+
+  /// No description provided for @shopName.
+  ///
+  /// In az, this message translates to:
+  /// **'Mağaza Adı'**
+  String get shopName;
+
+  /// No description provided for @productType.
+  ///
+  /// In az, this message translates to:
+  /// **'Məhsul Növü'**
+  String get productType;
+
+  /// No description provided for @weight.
+  ///
+  /// In az, this message translates to:
+  /// **'Çəki'**
+  String get weight;
+
+  /// No description provided for @price.
+  ///
+  /// In az, this message translates to:
+  /// **'Qiymət'**
+  String get price;
+
+  /// No description provided for @shippingPrice.
+  ///
+  /// In az, this message translates to:
+  /// **'Çatdırılma Qiyməti'**
+  String get shippingPrice;
+
+  /// No description provided for @quantity.
+  ///
+  /// In az, this message translates to:
+  /// **'Miqdar'**
+  String get quantity;
+
+  /// No description provided for @status.
+  ///
+  /// In az, this message translates to:
+  /// **'Status'**
+  String get status;
+
+  /// No description provided for @actionDate.
+  ///
+  /// In az, this message translates to:
+  /// **'Əməliyyat Tarixi'**
+  String get actionDate;
+
+  /// No description provided for @noPackagesFound.
+  ///
+  /// In az, this message translates to:
+  /// **'Heç bir paket tapılmadı'**
+  String get noPackagesFound;
+
+  /// No description provided for @searchHint.
+  ///
+  /// In az, this message translates to:
+  /// **'Ən azı bir axtarış parametri daxil edin'**
+  String get searchHint;
 }
 
 class _AppLocalizationsDelegate

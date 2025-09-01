@@ -241,7 +241,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get personalInformation => 'Личная информация';
 
   @override
-  String get email => 'Электронная почта';
+  String get email => 'Электронная Почта';
 
   @override
   String get phone => 'Телефон';
@@ -397,4 +397,130 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get accountDetails => 'Детали счета';
+
+  @override
+  String get qr => 'QR';
+
+  @override
+  String get scanStorageBarcode => 'Сканировать штрихкод склада';
+
+  @override
+  String get scanInvoiceBarcode => 'Сканировать штрихкод накладной';
+
+  @override
+  String get storageFound => 'Склад найден';
+
+  @override
+  String get storageDetails => 'Детали склада';
+
+  @override
+  String get storageId => 'ID склада';
+
+  @override
+  String get storageCapacity => 'Вместимость';
+
+  @override
+  String get storageSize => 'Размер';
+
+  @override
+  String get storageBox => 'Коробка';
+
+  @override
+  String get continueToInvoice => 'Перейти к сканированию накладной';
+
+  @override
+  String get scanAgain => 'Снова';
+
+  @override
+  String get invoiceStored => 'Накладная успешно сохранена';
+
+  @override
+  String get backToStorage => 'Вернуться к сканированию склада';
+
+  @override
+  String get scanNewStorage => 'Сканировать новый склад';
+
+  @override
+  String get positionCamera => 'Наведите камеру на QR-код или штрихкод';
+
+  @override
+  String get invalidBarcode => 'Неверный формат штрихкода';
+
+  @override
+  String get storageNotFound => 'Место склада не найдено';
+
+  @override
+  String get invoiceNotFound => 'Накладная не найдена';
+
+  @override
+  String get packageSearch => 'Поиск Посылок';
+
+  @override
+  String get uniqid => 'Уникальный ID';
+
+  @override
+  String get fullname => 'Полное Имя';
+
+  @override
+  String get fin => 'ФИН';
+
+  @override
+  String get purchaseNo => 'Номер Покупки';
+
+  @override
+  String get searchPackages => 'Искать Посылки';
+
+  @override
+  String get packageDetails => 'Детали Посылки';
+
+  @override
+  String get customerInfo => 'Информация о Клиенте';
+
+  @override
+  String get packageStock => 'Склад Посылок';
+
+  @override
+  String get contacts => 'Контакты';
+
+  @override
+  String get totalWeight => 'Общий Вес';
+
+  @override
+  String get balance => 'Баланс';
+
+  @override
+  String get birthdate => 'Дата Рождения';
+
+  @override
+  String get serialNumber => 'Серийный Номер';
+
+  @override
+  String get shopName => 'Название Магазина';
+
+  @override
+  String get productType => 'Тип Продукта';
+
+  @override
+  String get weight => 'Вес';
+
+  @override
+  String get price => 'Цена';
+
+  @override
+  String get shippingPrice => 'Стоимость Доставки';
+
+  @override
+  String get quantity => 'Количество';
+
+  @override
+  String get status => 'Статус';
+
+  @override
+  String get actionDate => 'Дата Действия';
+
+  @override
+  String get noPackagesFound => 'Посылки не найдены';
+
+  @override
+  String get searchHint => 'Введите хотя бы один параметр поиска';
 }

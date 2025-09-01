@@ -7,4 +7,5 @@ class Routes {
   // Main
   static const String warehouseView = '/warehouseView';
   static const String profileView = '/profileView';
+  static const String qrView = '/qrView';
 }

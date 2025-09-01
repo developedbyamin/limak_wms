@@ -395,4 +395,131 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get accountDetails => 'Account Details';
+
+  @override
+  String get qr => 'QR';
+
+  @override
+  String get scanStorageBarcode => 'Scan Storage Barcode';
+
+  @override
+  String get scanInvoiceBarcode => 'Scan Invoice Barcode';
+
+  @override
+  String get storageFound => 'Storage Found';
+
+  @override
+  String get storageDetails => 'Storage Details';
+
+  @override
+  String get storageId => 'Storage ID';
+
+  @override
+  String get storageCapacity => 'Capacity';
+
+  @override
+  String get storageSize => 'Size';
+
+  @override
+  String get storageBox => 'Box';
+
+  @override
+  String get continueToInvoice => 'Continue to Invoice Scan';
+
+  @override
+  String get scanAgain => 'Scan Again';
+
+  @override
+  String get invoiceStored => 'Invoice Stored Successfully';
+
+  @override
+  String get backToStorage => 'Back to Storage Scan';
+
+  @override
+  String get scanNewStorage => 'Scan New Storage';
+
+  @override
+  String get positionCamera =>
+      'Position the camera over the QR code or barcode';
+
+  @override
+  String get invalidBarcode => 'Invalid barcode format';
+
+  @override
+  String get storageNotFound => 'Storage location not found';
+
+  @override
+  String get invoiceNotFound => 'Invoice not found';
+
+  @override
+  String get packageSearch => 'Package Search';
+
+  @override
+  String get uniqid => 'Unique ID';
+
+  @override
+  String get fullname => 'Full Name';
+
+  @override
+  String get fin => 'FIN';
+
+  @override
+  String get purchaseNo => 'Purchase Number';
+
+  @override
+  String get searchPackages => 'Search Packages';
+
+  @override
+  String get packageDetails => 'Package Details';
+
+  @override
+  String get customerInfo => 'Customer Information';
+
+  @override
+  String get packageStock => 'Package Stock';
+
+  @override
+  String get contacts => 'Contacts';
+
+  @override
+  String get totalWeight => 'Total Weight';
+
+  @override
+  String get balance => 'Balance';
+
+  @override
+  String get birthdate => 'Birth Date';
+
+  @override
+  String get serialNumber => 'Serial Number';
+
+  @override
+  String get shopName => 'Shop Name';
+
+  @override
+  String get productType => 'Product Type';
+
+  @override
+  String get weight => 'Weight';
+
+  @override
+  String get price => 'Price';
+
+  @override
+  String get shippingPrice => 'Shipping Price';
+
+  @override
+  String get quantity => 'Quantity';
+
+  @override
+  String get status => 'Status';
+
+  @override
+  String get actionDate => 'Action Date';
+
+  @override
+  String get noPackagesFound => 'No packages found';
+
+  @override
+  String get searchHint => 'Enter at least one search parameter';
 }

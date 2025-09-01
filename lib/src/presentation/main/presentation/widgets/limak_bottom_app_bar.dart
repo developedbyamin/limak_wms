@@ -17,6 +17,7 @@ class LimakBottomAppBar extends StatelessWidget {
     
     final items = [
       Routes.warehouseView,
+      Routes.qrView,
       Routes.profileView,
     ];
     
@@ -27,6 +28,7 @@ class LimakBottomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final items = [
       {'vectorPath': AppVectors.icDashboard, 'labelText': AppLocalizations.of(context)!.dashboard, 'route': Routes.warehouseView},
+      {'vectorPath': AppVectors.icQr, 'labelText': AppLocalizations.of(context)!.qr, 'route': Routes.qrView},
       {'vectorPath': AppVectors.icProfile, 'labelText': AppLocalizations.of(context)!.profile, 'route': Routes.profileView},
     ];
 
